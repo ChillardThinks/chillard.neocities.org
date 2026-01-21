@@ -12,7 +12,7 @@ a {
 body {
   background-color: white;
   color: black;
-  font-family: Verdana;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 /* Set margin and padding to 0 for certain elements */
@@ -26,15 +26,13 @@ body {
   display: grid;
   margin: 1rem auto;
   max-width: 900px;
-  grid-gap: 2px;
+  gap: 2px;
   grid-template:
     "header header header"
     "nav nav nav"
     "aside--left main aside--right"
     "footer footer footer"
     / 1fr 2fr 1fr;
-  border: 2px solid black;
-  background-color: black;
 }
 
 .banner { 
@@ -42,7 +40,10 @@ body {
   display: flex;
   justify-content: center;
   padding: 3rem;
+  font-size: 2rem;
+  font-style: italic;
   background-color: burlywood;
+  border: 2px solid black;
 }
 
 nav {
@@ -51,21 +52,25 @@ nav {
   justify-content: center;
   list-style-type: none;
   background-color: bisque;
+  border: 2px solid black;
 }
 
 .aside--left {
   grid-area: aside--left;
   background-color: blanchedalmond;
+  border: 2px solid black;
 }
 
 .aside--right {
   grid-area: aside--right;
   background-color: blanchedalmond;
+  border: 2px solid black;
 }
 
 main { 
   grid-area: main; 
   background-color: blanchedalmond;
+  border: 2px solid black;
 }
 
 footer {
@@ -73,6 +78,7 @@ footer {
   display: flex;
   justify-content: center;
   background-color: blanchedalmond;
+  border: 2px solid black;
 }
 
 /* ----- Default style for widgets ----- */
@@ -86,6 +92,8 @@ footer {
   text-align: center;
   padding: 0.8em;
   background-color: burlywood;
+  border-top: black solid 2px;
+  border-bottom: black solid 2px;
 }
 
 .widget__content {
@@ -101,10 +109,65 @@ nav li:hover {
   background-color: burlywood;
 }
 
+/* ----- Styles for the Profile widget ----- */
+.profile {
+  /* -- */
+}
+
+.profile__picture {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile__img {
+  width: 8em;
+  height: 8em;
+  border: 2px solid black;
+  background-color: white;
+}
+
+.status header {
+  display: flex;
+  justify-content: center;
+  margin: 1em;
+  margin-top: 0.5em;
+}
+
+.status__images {
+  display: flex;
+  justify-content: center;
+  gap: 0.3em;
+}
+
+.status__img-container {
+  width: auto;
+  padding: 0;
+  margin: 0;
+}
+
+.status__img {
+  width: 2em;
+  height: 2em;
+  border: 2px solid black;
+  border-radius: 16px;
+  background-color: white;
+}
+
+/* ----- Styles for the Likes and Dislikes widget ----- */
+.likes ul, .dislikes ul {
+  padding: 1em 2em;
+}
+
 /* ----- Styles for the Changelog widget ----- */
 .changelog {
   max-height: 340px;
   overflow: auto;
+}
+
+.changelog .widget__title {
+  border-top: none;
 }
 
 .changelog .widget__content {
@@ -120,11 +183,11 @@ nav li:hover {
 }
 
 .changelog__entry:first-child h3 {
-  font-size: 1.3em;
+  font-size: 1.4em;
 }
 
 .changelog__entry:first-child li {
-  font-size: 1.15em;
+  font-size: 1.2em;
 }
 
 .changelog__entry:hover {
